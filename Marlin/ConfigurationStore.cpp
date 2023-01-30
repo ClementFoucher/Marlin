@@ -37,7 +37,7 @@ void _EEPROM_readData(int &pos, uint8_t* value, uint8_t size)
 // the default values are used whenever there is a change to the data, to prevent
 // wrong data being written to the variables.
 // ALSO:  always make sure the variables in the Store and retrieve sections are in the same order.
-#define EEPROM_VERSION "V11"
+#define EEPROM_VERSION "V12"
 
 #ifdef EEPROM_SETTINGS
 void Config_StoreSettings() 
@@ -70,9 +70,9 @@ void Config_StoreSettings()
   EEPROM_WRITE_VAR(i,absPreheatHotendTemp);
   EEPROM_WRITE_VAR(i,absPreheatHPBTemp);
   EEPROM_WRITE_VAR(i,absPreheatFanSpeed);
-  EEPROM_WRITE_VAR(i,bed_level_probe_offset[0]);
-  EEPROM_WRITE_VAR(i,bed_level_probe_offset[1]);
-  EEPROM_WRITE_VAR(i,bed_level_probe_offset[2]);
+//  EEPROM_WRITE_VAR(i,bed_level_probe_offset[0]);
+//  EEPROM_WRITE_VAR(i,bed_level_probe_offset[1]);
+//  EEPROM_WRITE_VAR(i,bed_level_probe_offset[2]);
   #ifdef PIDTEMP
     EEPROM_WRITE_VAR(i,Kp);
     EEPROM_WRITE_VAR(i,Ki);
@@ -242,9 +242,9 @@ void Config_RetrieveSettings()
         EEPROM_READ_VAR(i,absPreheatHotendTemp);
         EEPROM_READ_VAR(i,absPreheatHPBTemp);
         EEPROM_READ_VAR(i,absPreheatFanSpeed);
-        EEPROM_READ_VAR(i,bed_level_probe_offset[0]);
-        EEPROM_READ_VAR(i,bed_level_probe_offset[1]);
-        EEPROM_READ_VAR(i,bed_level_probe_offset[2]);
+//        EEPROM_READ_VAR(i,bed_level_probe_offset[0]);
+//        EEPROM_READ_VAR(i,bed_level_probe_offset[1]);
+//        EEPROM_READ_VAR(i,bed_level_probe_offset[2]);
         #ifndef PIDTEMP
         float Kp,Ki,Kd;
         #endif
